@@ -41,7 +41,7 @@ export class MediaItemListComponent {
       medium: "Series",
       category: "Drama",
       year: null,
-      watchedOn: null,
+      watchedOn: 1294166567384,
       isFavorite: true
     }, {
       id: 5,
