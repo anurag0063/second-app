@@ -3,7 +3,7 @@
 </header>
 <form
 	[formGroup]="form"
-	(ngSubmit) = 'onSubmit(form	.value)'>
+	(ngSubmit) = 'onSubmit(form.value)'>
   <ul>
     <li>
       <label for="medium">Medium</label>
@@ -27,10 +27,10 @@
         <option value="Romance">Romance</option>
       </select>
     </li>
-    <li>
+    <li>	 
       <label for="year">Year</label>
       <input type="text" name="year" id="year" maxlength="4" formControlName="year">
     </li>
   </ul>
-  <button type="submit">Save</button>
+  <button type="submit" [disabled]="!form.valid">Save</button>
 </form>

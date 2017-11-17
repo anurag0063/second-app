@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -13,7 +13,11 @@ export class MediaItemFormComponent {
 	ngOnInit(){
 		this.form = new FormGroup({
 			medium: new FormControl('Movies'),
-			name: new FormControl(''),
+			//if you have more than one validation put everything under validation.compose
+			name: new FormControl('', Validators.compose([
+				Validators.pattern('[\\w\\-\\s\\/]+'), 
+				Validators.required
+				])),
 			category: new FormControl(''),
 			year: new FormControl('')
 		})
