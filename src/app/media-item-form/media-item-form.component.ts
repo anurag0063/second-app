@@ -19,9 +19,25 @@ export class MediaItemFormComponent {
 				Validators.required
 				])),
 			category: new FormControl(''),
-			year: new FormControl('')
+			year: new FormControl('', this.yearValidator)
 		})
+
+
 	}
+
+	yearValidator(control) {
+			if (control.value.trim().length === 0){
+				return null;
+			}
+			let year = parseInt(control.value);
+			if(year >=1921 && year <= 2100) {
+				return null;
+			}else {
+				return {
+					'year': true
+				};
+			}
+		}
 
 	onSubmit(mediaItem) {
 		console.log(mediaItem);
