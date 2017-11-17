@@ -34,9 +34,10 @@ export class MediaItemFormComponent {
 			if(year >= min && year <= max) {
 				return null;
 			}else {
-				return {
-					'year': true
-				};
+				return { 'year': {
+					minYear: min,
+					maxYear: max
+				}};
 			}
 		}
 
